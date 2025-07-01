@@ -1,0 +1,7 @@
+.first-page{
+    background-color: #ffffff; /* Dark background */
+    color: white;
+    display: flex;
+    flex-direction: column;
+    height: 150vh;
+}

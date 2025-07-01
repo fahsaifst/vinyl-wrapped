@@ -1,0 +1,40 @@
+.vinyl-card {
+    width: 393px;
+    height: 693x;
+    padding: 24px;
+    background-color: transparent;
+    position: relative ;
+}
+
+.vinyl-card-content {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    top: 18%;
+}
+
+.vinyl-bg {
+    width: 524px;
+    height: 524px;
+    object-fit: cover;
+}
+
+.wrapped {
+    font-size: 1rem;
+    color: #111;
+    margin-bottom: 1rem;
+}
+
+
+
+.vinyl-card-header {
+    
+    color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}

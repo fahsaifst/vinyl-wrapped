@@ -29,7 +29,7 @@ const millisToMinutesAndSeconds = (millis: number) => {
 const VinylCard = forwardRef<HTMLDivElement, Props>(
   ({ tracks, backgroundImage }, ref) => {
     return (
-      <div ref={ref} className="vinyl-card aspect-[9/16]">
+      <div ref={ref} className="vinyl-card">
         {backgroundImage && (
           <div
             className="absolute mt-100 inset-0 w-full h-100 bg-cover bg-center"
@@ -39,26 +39,20 @@ const VinylCard = forwardRef<HTMLDivElement, Props>(
           />
         )}
 
-        <div>
-          <div>
-            <div className="w-full h-112 relative inset-0 rounded-full overflow-hidden mt-10 backdrop-blur-xs"></div>
-            <img
-              className="vinyl-bg absolute inset-0"
-              src="/Vinyl_BG.png"
-              alt="Vinyl Background"
-            />
+        <ul>
+          <div className="vinyl-bg-wrapper">
+            <div className="vinyl-bg-blur" />
+            <div className="vinyl-bg-image" />
           </div>
 
-          <div className="vinyl-card-content ">
-            <div className="vinyl-card-header">
-              <p className="font-extrabold text-[30px] leading-none">VINYL</p>
-              <p className="font-black text-[15px] leading-none pb-1">
-                WRAPPED
-              </p>
-            </div>
+          <ul className="vinyl-card-content">
+            <ul className="vinyl-card-header">
+              <li className="font-extrabold text-[30px]">VINYL</li>
+              <li className="font-black text-[15px]">WRAPPED</li>
+            </ul>
 
             <ul>
-              <div className="pb-5">
+              <div className="pb-8">
                 {tracks.slice(0, 5).map((track, i) => (
                   <li key={i}>
                     <div className="font-black text-black text-[9px] text-center w-60">
@@ -71,7 +65,7 @@ const VinylCard = forwardRef<HTMLDivElement, Props>(
                 ))}
               </div>
               <img
-                className="absolute inset-0 left-45 w-20 h-5 mt-35"
+                className="absolute  w-20 h-5 left-65 top-35"
                 src="/barcode.png"
                 alt="barcode"
               />
@@ -86,21 +80,21 @@ const VinylCard = forwardRef<HTMLDivElement, Props>(
                 </li>
               ))}
 
-              <div className="flex flex-col items-center justify-center mt-4">
-                <p className="text-[6px] font-bold text-black">
+              <ul className="text-center pt-4">
+                <li className="text-[6px] font-bold text-black">
                   SPOTIFY Recordes
-                </p>
-                <div className="flex gap-2">
-                  <p className="text-[6px] text-black">TOP TRACK</p>
-                  <p className="text-[6px] text-black">LAST MONTH</p>
-                </div>
-                <p className="text-[6px] text-black">{currentDate}</p>
-                <p className="text-[6px] text-black">Made by</p>
-                <p className="text-[6px] text-black">fahsai x captain</p>
-              </div>
+                </li>
+                <ul className="flex justify-center gap-2">
+                  <li className="text-[6px] text-black">TOP TRACK</li>
+                  <li className="text-[6px] text-black">LAST MONTH</li>
+                </ul>
+                <li className="text-[6px] text-black">{currentDate}</li>
+                <li className="text-[6px] text-black">Made by</li>
+                <li className="text-[6px] text-black">fahsai x captain</li>
+              </ul>
             </ul>
-          </div>
-        </div>
+          </ul>
+        </ul>
       </div>
     );
   }

@@ -22,7 +22,7 @@ export default VinylWrapped;
 
 export const LoginButtun = () => {
   const handleLogin = () => {
-    window.location.href = "http://127.0.0.1:3001/login";
+    window.location.href = "/api/login";
   };
   return (
     <button

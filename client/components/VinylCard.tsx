@@ -2,7 +2,6 @@
 
 import { forwardRef } from "react";
 import "./VinylCard.css";
-import { url } from "inspector";
 
 type Props = {
   tracks: {
@@ -99,5 +98,7 @@ const VinylCard = forwardRef<HTMLDivElement, Props>(
     );
   }
 );
+
+VinylCard.displayName = "VinylCard";
 
 export default VinylCard;

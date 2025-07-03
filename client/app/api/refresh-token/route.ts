@@ -6,7 +6,10 @@ export async function POST(req: NextRequest) {
   const refresh_token = body.refresh_token;
 
   if (!refresh_token) {
-    return NextResponse.json({ error: "Missing refresh token" }, { status: 400 });
+    return NextResponse.json(
+      { error: "Missing refresh token" },
+      { status: 400 }
+    );
   }
 
   const CLIENT_ID = process.env.SPOTIFY_CLIENT_ID!;
@@ -30,8 +33,11 @@ export async function POST(req: NextRequest) {
     );
 
     return NextResponse.json({ access_token: response.data.access_token });
-  } catch (error: any) {
-    console.error("Refresh Token Error:", error.response?.data || error.message);
-    return NextResponse.json({ error: "Failed to refresh token" }, { status: 500 });
+  } catch (err) {
+    if (err instanceof Error) {
+      console.error(err.message);
+    } else {
+      console.error("Unknown error", err);
+    }
   }
 }

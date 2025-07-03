@@ -4,7 +4,8 @@ import axios from "axios";
 export async function GET(req: NextRequest) {
   const code = req.nextUrl.searchParams.get("code");
 
-  if (!code) return NextResponse.json({ error: "Missing code" }, { status: 400 });
+  if (!code)
+    return NextResponse.json({ error: "Missing code" }, { status: 400 });
 
   const CLIENT_ID = process.env.SPOTIFY_CLIENT_ID!;
   const CLIENT_SECRET = process.env.SPOTIFY_CLIENT_SECRET!;
@@ -32,8 +33,11 @@ export async function GET(req: NextRequest) {
     return NextResponse.redirect(
       `${process.env.NEXT_PUBLIC_CLIENT_URL}/callback?access_token=${access_token}&refresh_token=${refresh_token}`
     );
-  } catch (error: any) {
-    console.error("Callback Error:", error.response?.data || error.message);
-    return NextResponse.json({ error: "Failed to authenticate" }, { status: 500 });
+  } catch (err) {
+    if (err instanceof Error) {
+      console.error(err.message);
+    } else {
+      console.error("Unknown error", err);
+    }
   }
 }

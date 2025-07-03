@@ -4,6 +4,7 @@ import { useEffect, useState, useRef } from "react";
 import html2canvas from "html2canvas";
 import VinylCard from "../../components/VinylCard";
 import "./page.css"; // Import your CSS file for styling
+import Navbar from "@/components/navbar";
 
 type Track = {
   name: string;
@@ -67,12 +68,10 @@ export default function TopTracks() {
   };
 
   return (
-    <div className="page">
-      <ul className="menu">
-        <li>Home</li>
-        <li>Privacy Policy</li>
-        <li>Contact</li>
-      </ul>
+
+    <div className="page h-300 md:h-450">
+      <Navbar />
+      
       <div className="header">
         <h1>TOP TRACK</h1>
         <h1>LAST MONTH</h1>
@@ -81,8 +80,10 @@ export default function TopTracks() {
         SAVE IMAGE
       </button>
 
-      <div className="card-container " ref={cardRef}>
+      <div className=" flex justify-center items-center">
+        <div className="card-container" ref={cardRef}>
         <VinylCard tracks={tracks} backgroundImage={tracks[0]?.image} />
+      </div>
       </div>
     </div>
   );

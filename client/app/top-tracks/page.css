@@ -3,18 +3,8 @@
   color: white;
   display: flex;
   flex-direction: column;
-  height: 150vh;
 }
 
-.menu {
-  padding-top: 10vw;
-  padding-left: 8vw;
-  padding-right: 8vw;
-  font-size: 3vw;
-  color: #747474;
-  display: flex;
-  justify-content: space-between;
-}
 
 .header {
   padding: 0 8vw;
@@ -36,8 +26,7 @@
 }
 
 .card-container {
+  aspect-ratio: 9 / 16;
   display: flex;
-  justify-content: center; /* Center horizontally */
-  align-items: center;     /* Center vertically (optional) */
-  margin-top: 1rem;  
+  margin-top: 1rem;
 }

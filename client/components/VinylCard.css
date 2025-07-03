@@ -1,40 +1,65 @@
 .vinyl-card {
-    width: 393px;
-    height: 693x;
-    padding: 24px;
-    background-color: transparent;
-    position: relative ;
+  width: 390px;
+  height: 693x;
+  background-color: transparent;
+  position: relative;
 }
 
 .vinyl-card-content {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 60%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    top: 18%;
+  width: 393px;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  top: 17%;
+  z-index: 1;
 }
 
 .vinyl-bg {
-    width: 524px;
-    height: 524px;
-    object-fit: cover;
+  width: 524px;
+  height: 524px;
+  object-fit: cover;
+  background-size: cover;
 }
 
-.wrapped {
-    font-size: 1rem;
-    color: #111;
-    margin-bottom: 1rem;
+.vinyl-bg-wrapper {
+  position: absolute;
+  width: 100%;
+  height: 524px; /* or your desired height */
+}
+
+.vinyl-bg-blur {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  overflow: hidden;
+  backdrop-filter: blur(4px);
+  z-index: 0;
+}
+
+.vinyl-bg-image {
+  position: absolute;
+  inset: 0;
+  background-image: url("/Vinyl_BG.png");
+  background-size: cover;
+  background-position: center;
+  z-index: 1;
 }
 
 
 
 .vinyl-card-header {
-    
-    color: black;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  line-height: 1;
+  color: black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 5px;
 }
+
+/* .vinyl-card-footer {
+  color: black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+} */

@@ -19,14 +19,14 @@ export default function TopTracks() {
   const cardRef = useRef<HTMLDivElement>(null);
 
   const fetchTracks = async (token: string) => {
-    const res = await fetch("http://127.0.0.1:3001/top-tracks", {
+    const res = await fetch("/api/top-tracks", {
       headers: { Authorization: `Bearer ${token}` },
     });
 
     if (res.status === 401 || res.status === 400) {
       // 🔁 Token หมดอายุ → ขอใหม่
       const refresh_token = localStorage.getItem("refresh_token");
-      const refreshed = await fetch("http://127.0.0.1:3001/refresh-token", {
+      const refreshed = await fetch("/api/refresh-token", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ refresh_token }),
@@ -46,7 +46,7 @@ export default function TopTracks() {
 
     fetchTracks(token);
 
-    fetch("http://127.0.0.1:3001/top-tracks", {
+    fetch("/api/top-tracks", {
       headers: { Authorization: `Bearer ${token}` },
     })
       .then((res) => res.json())

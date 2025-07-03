@@ -3,7 +3,6 @@
 import Navbar from "@/components/navbar";
 import VinylWrapped, {
   LoginButtun,
-  Term,
   VinylCover,
 } from "@/components/VinylWrapped";
 
@@ -18,7 +17,6 @@ export default function ContactPage() {
         <LoginButtun />
         <VinylCover />
 
-        <Term />
         <Navbar />
       </div>
     </main>

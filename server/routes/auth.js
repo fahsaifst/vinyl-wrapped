@@ -44,7 +44,7 @@ router.get('/callback', async (req, res) => {
     );
 
      const { access_token, refresh_token } = tokenRes.data;
-    res.redirect(`http://localhost:3000/callback?access_token=${access_token}&refresh_token=${refresh_token}`);
+    res.redirect(`https://vinyl-wrapped-dqrc.vercel.app/callback?access_token=${access_token}&refresh_token=${refresh_token}`);
   } catch (err) {
     console.error('Token Error:', err.response?.data || err);
     res.send('Authentication Failed');

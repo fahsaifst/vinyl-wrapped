@@ -1,10 +1,5 @@
 "use client";
 
-import Navbar from "@/components/navbar";
-import VinylWrapped, {
-  LoginButtun,
-  VinylCover,
-} from "@/components/VinylWrapped";
 import { useRouter } from "next/navigation";
 import { ContactVinyl } from "../contact/page";
 
@@ -18,7 +13,9 @@ export default function ContactPage() {
           <button
             onClick={() => router.back()}
             className="z-50 px-2 py-2 text-sm font-semibold text-white bg-gray-400 rounded-full  transition absolute"
-          >X</button>
+          >
+            X
+          </button>
         </div>
       </div>
     </main>

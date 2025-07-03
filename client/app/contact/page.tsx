@@ -1,7 +1,7 @@
 "use client";
 
 import Navbar from "@/components/navbar";
-import VinylWrapped, {
+import {
   LoginButtun,
   VinylCover,
 } from "@/components/VinylWrapped";

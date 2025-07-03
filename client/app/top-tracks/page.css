@@ -1,48 +1,43 @@
 .page {
-    background-color: #ffffff; /* Dark background */
-    color: white;
-    display: flex;
-    flex-direction: column;
-    height: 150vh;
-
+  background-color: #ffffff; /* Dark background */
+  color: white;
+  display: flex;
+  flex-direction: column;
+  height: 150vh;
 }
 
 .menu {
-    padding-top: 10vw;
-    padding-left: 8vw;
-    padding-right: 8vw;
-    font-size: 3vw;
-    color: #747474;
-    display: flex;
-    justify-content: space-between;
-
-    
+  padding-top: 10vw;
+  padding-left: 8vw;
+  padding-right: 8vw;
+  font-size: 3vw;
+  color: #747474;
+  display: flex;
+  justify-content: space-between;
 }
 
 .header {
-    padding: 0 8vw;
-    display: flex;
-    color: black;
-    font-size: 5vw;
-    font-weight: bold;
-    justify-content: space-between;
-    
+  padding: 0 8vw;
+  display: flex;
+  color: black;
+  font-size: 5vw;
+  font-weight: bold;
+  justify-content: space-between;
 }
 
-.save-button {  
-    font-size: 3vw;
-    text-decoration: underline;
-    color: black;
-    display: flex;
-    justify-content: end;
-    padding-right: 8vw;
-    padding-bottom: 5vw;
+.save-button {
+  font-size: 3vw;
+  text-decoration: underline;
+  color: black;
+  display: flex;
+  justify-content: end;
+  padding-right: 8vw;
+  padding-bottom: 5vw;
 }
 
 .card-container {
   display: flex;
   justify-content: center; /* Center horizontally */
   align-items: center;     /* Center vertically (optional) */
-  margin-top: 1rem;        /* Space from header or buttons */
-
+  margin-top: 1rem;  
 }

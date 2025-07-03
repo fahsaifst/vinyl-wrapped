@@ -31,16 +31,17 @@ const VinylCard = forwardRef<HTMLDivElement, Props>(
     return (
       <div ref={ref} className="vinyl-card aspect-[9/16]">
         {backgroundImage && (
-          <img
-            src={backgroundImage}
-            alt="Track background"
-            className="absolute mt-100 inset-0 w-full object-cover"
+          <div
+            className="absolute mt-100 inset-0 w-full h-100 bg-cover bg-center"
+            style={{
+              backgroundImage: `url(${backgroundImage})`,
+            }}
           />
         )}
 
         <div>
           <div>
-            <div className="w-full h-112 absolute inset-0 rounded-full overflow-hidden mt-10 backdrop-blur-xs"></div>
+            <div className="w-full h-112 relative inset-0 rounded-full overflow-hidden mt-10 backdrop-blur-xs"></div>
             <img
               className="vinyl-bg absolute inset-0"
               src="/Vinyl_BG.png"

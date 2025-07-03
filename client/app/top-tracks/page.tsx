@@ -19,14 +19,14 @@ export default function TopTracks() {
   const cardRef = useRef<HTMLDivElement>(null);
 
   const fetchTracks = async (token: string) => {
-    const res = await fetch("/api/top-tracks", {
+    const res = await fetch("https://vinyl-wrapped-backend.vercel.app/top-tracks", {
       headers: { Authorization: `Bearer ${token}` },
     });
 
     if (res.status === 401 || res.status === 400) {
       // 🔁 Token หมดอายุ → ขอใหม่
       const refresh_token = localStorage.getItem("refresh_token");
-      const refreshed = await fetch("/api/refresh-token", {
+      const refreshed = await fetch("https://vinyl-wrapped-backend.vercel.app/refresh-token", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ refresh_token }),
@@ -46,7 +46,7 @@ export default function TopTracks() {
 
     fetchTracks(token);
 
-    fetch("/api/top-tracks", {
+    fetch("https://vinyl-wrapped-backend.vercel.app/top-tracks", {
       headers: { Authorization: `Bearer ${token}` },
     })
       .then((res) => res.json())

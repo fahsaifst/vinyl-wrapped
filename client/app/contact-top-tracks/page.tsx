@@ -1,7 +1,7 @@
 "use client";
 
 import { useRouter } from "next/navigation";
-import { ContactVinyl } from "../contact/page";
+import ContactVinyl from "../contact/page";
 
 export default function ContactPage() {
   const router = useRouter();

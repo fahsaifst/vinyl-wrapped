@@ -12,7 +12,7 @@ export default function CallbackPage() {
     if (token && refreshToken) {
       localStorage.setItem('access_token', token);
       localStorage.setItem('refresh_token', refreshToken);
-      router.push('/top-tracks'); // ไปยังหน้าหลักหลัง login
+      router.push('/top-tracks'); 
     }
     else {
       console.warn('No access token found in URL');

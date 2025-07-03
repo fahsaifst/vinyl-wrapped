@@ -55,7 +55,11 @@ export default function TopTracks() {
 
   const downloadImage = async () => {
     if (!cardRef.current) return;
-    const canvas = await html2canvas(cardRef.current);
+    await new Promise((resolve) => setTimeout(resolve, 300));
+    const canvas = await html2canvas(cardRef.current!, {
+      useCORS: true,
+      allowTaint: false,
+    });
     const link = document.createElement("a");
     link.download = "vinyl-wrapped.png";
     link.href = canvas.toDataURL();
@@ -77,12 +81,8 @@ export default function TopTracks() {
         SAVE IMAGE
       </button>
 
-      <div className="card-container" ref={cardRef}>
-        <VinylCard
-          tracks={tracks}
-          ref={cardRef}
-          backgroundImage={tracks[0]?.image}
-        />
+      <div className="card-container " ref={cardRef}>
+        <VinylCard tracks={tracks} backgroundImage={tracks[0]?.image} />
       </div>
     </div>
   );

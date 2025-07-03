@@ -8,10 +8,10 @@ const Navbar = () => {
       <div className="flex justify-center items-end h-full">
         <ul className="flex gap-10 text-sm font-bold text-black">
           <li>
-            <Link href="/home">Home</Link>
+            <Link href="/">Home</Link>
           </li>
           <li>
-            <Link href="/">Privacy Policy</Link>
+            <Link href="/policy">Privacy Policy</Link>
           </li>
           <li>
             <Link href="/contact">Contact</Link>

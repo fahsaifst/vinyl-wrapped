@@ -14,7 +14,6 @@ const VinylWrapped = () => {
         />
         <VinylCover />
       </div>
-      <Term />
     </div>
   );
 };
@@ -46,31 +45,6 @@ export const VinylCover = () => {
         <p className="font-black text-xs">MADE BY</p>
         <p className="font-black text-base">FAHSAI X CAPTAIN</p>
       </div>
-    </div>
-  );
-};
-
-export const Term = () => {
-  return (
-    <div className="text-black mt-10">
-      <p className="text-xs">
-        This is a demo app for educational purposes only.
-      </p>
-      <p className="text-xs">Please do not use it for commercial purposes.</p>
-      <p className="text-xs">
-        Spotify is a registered trademark of Spotify AB.
-      </p>
-      <p className="text-xs">This app is not affiliated with Spotify AB.</p>
-      <p className="text-xs">
-        For more information, please visit the{" "}
-        <a
-          href="https://developer.spotify.com/documentation/web-api/"
-          className="underline text-blue-500"
-        >
-          Spotify Web API documentation
-        </a>
-        .
-      </p>
     </div>
   );
 };

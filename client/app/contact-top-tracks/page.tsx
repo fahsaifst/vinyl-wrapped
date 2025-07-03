@@ -3,7 +3,6 @@
 import Navbar from "@/components/navbar";
 import VinylWrapped, {
   LoginButtun,
-  Term,
   VinylCover,
 } from "@/components/VinylWrapped";
 import { useRouter } from "next/navigation";

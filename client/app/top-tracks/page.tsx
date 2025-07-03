@@ -19,18 +19,24 @@ export default function TopTracks() {
   const cardRef = useRef<HTMLDivElement>(null);
 
   const fetchTracks = async (token: string) => {
-    const res = await fetch("https://vinyl-wrapped-backend.vercel.app/top-tracks", {
-      headers: { Authorization: `Bearer ${token}` },
-    });
+    const res = await fetch(
+      "https://vinyl-wrapped-backend.vercel.app/top-tracks",
+      {
+        headers: { Authorization: `Bearer ${token}` },
+      }
+    );
 
     if (res.status === 401 || res.status === 400) {
       // 🔁 Token หมดอายุ → ขอใหม่
       const refresh_token = localStorage.getItem("refresh_token");
-      const refreshed = await fetch("https://vinyl-wrapped-backend.vercel.app/refresh-token", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ refresh_token }),
-      });
+      const refreshed = await fetch(
+        "https://vinyl-wrapped-backend.vercel.app/refresh-token",
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ refresh_token }),
+        }
+      );
       const { access_token } = await refreshed.json();
       localStorage.setItem("access_token", access_token);
       return fetchTracks(access_token); // 🔄 รีเฟตช์ใหม่อีกครั้ง
@@ -45,13 +51,6 @@ export default function TopTracks() {
     if (!token) return;
 
     fetchTracks(token);
-
-    fetch("https://vinyl-wrapped-backend.vercel.app/top-tracks", {
-      headers: { Authorization: `Bearer ${token}` },
-    })
-      .then((res) => res.json())
-      .then((data) => setTracks(data.tracks))
-      .catch((err) => console.error(err));
   }, []);
 
   const downloadImage = async () => {
@@ -68,10 +67,9 @@ export default function TopTracks() {
   };
 
   return (
-
     <div className="page h-300 md:h-450">
       <Navbar />
-      
+
       <div className="header">
         <h1>TOP TRACK</h1>
         <h1>LAST MONTH</h1>
@@ -82,8 +80,8 @@ export default function TopTracks() {
 
       <div className=" flex justify-center items-center">
         <div className="card-container" ref={cardRef}>
-        <VinylCard tracks={tracks} backgroundImage={tracks[0]?.image} />
-      </div>
+          <VinylCard tracks={tracks} backgroundImage={tracks[0]?.image} />
+        </div>
       </div>
     </div>
   );

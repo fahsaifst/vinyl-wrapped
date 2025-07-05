@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Spotify Wrapped",
+  title: "Vinyl Wrapped",
   description: "Top tracks wrapped with vinyl style",
 };
 

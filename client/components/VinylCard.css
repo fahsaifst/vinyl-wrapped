@@ -33,7 +33,7 @@
   inset: 0;
   border-radius: 50%;
   overflow: hidden;
-  backdrop-filter: blur(4px);
+  /* backdrop-filter: blur(4px); */
   z-index: 0;
 }
 

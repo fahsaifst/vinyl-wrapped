@@ -55,7 +55,7 @@ const VinylCard = forwardRef<HTMLDivElement, Props>(
                 {tracks.slice(0, 5).map((track, i) => (
                   <li key={i}>
                     <div className="font-black text-black text-[9px] text-center w-60">
-                      {i + 1} {track.name} - {track.artist}{" "}
+                      {i + 1}. {track.name} - {track.artist}{" "}
                       {typeof track.duration_ms === "number"
                         ? `${millisToMinutesAndSeconds(track.duration_ms)}`
                         : ""}

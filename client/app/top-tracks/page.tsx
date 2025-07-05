@@ -27,7 +27,6 @@ export default function TopTracks() {
     );
 
     if (res.status === 401 || res.status === 400) {
-      // 🔁 Token หมดอายุ → ขอใหม่
       const refresh_token = localStorage.getItem("refresh_token");
       const refreshed = await fetch(
         "https://vinyl-wrapped-production.up.railway.app/refresh-token",
@@ -39,7 +38,7 @@ export default function TopTracks() {
       );
       const { access_token } = await refreshed.json();
       localStorage.setItem("access_token", access_token);
-      return fetchTracks(access_token); // 🔄 รีเฟตช์ใหม่อีกครั้ง
+      return fetchTracks(access_token); 
     }
 
     const data = await res.json();

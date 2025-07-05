@@ -22,7 +22,7 @@ export default VinylWrapped;
 
 export const LoginButtun = () => {
   const handleLogin = () => {
-    window.location.href = "https://vinyl-wrapped-backend.vercel.app/login";
+    window.location.href = "https://vinyl-wrapped-production.up.railway.app/login";
   };
   return (
     <button

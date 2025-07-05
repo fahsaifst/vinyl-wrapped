@@ -9,6 +9,7 @@ export default function CallbackPage() {
     const urlParams = new URLSearchParams(window.location.search);
     const token = urlParams.get('access_token');
     const refreshToken = urlParams.get('refresh_token');
+    
     if (token && refreshToken) {
       localStorage.setItem('access_token', token);
       localStorage.setItem('refresh_token', refreshToken);

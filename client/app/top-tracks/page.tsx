@@ -20,7 +20,7 @@ export default function TopTracks() {
 
   const fetchTracks = async (token: string) => {
     const res = await fetch(
-      "https://vinyl-wrapped-backend.vercel.app/top-tracks",
+      "https://vinyl-wrapped-production.up.railway.app/top-tracks",
       {
         headers: { Authorization: `Bearer ${token}` },
       }
@@ -30,7 +30,7 @@ export default function TopTracks() {
       // 🔁 Token หมดอายุ → ขอใหม่
       const refresh_token = localStorage.getItem("refresh_token");
       const refreshed = await fetch(
-        "https://vinyl-wrapped-backend.vercel.app/refresh-token",
+        "https://vinyl-wrapped-production.up.railway.app/refresh-token",
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },

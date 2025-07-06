@@ -32,8 +32,10 @@ A web application that displays your **top Spotify tracks** in a vinyl-inspired 
 
 ## Preview
 
-![Vinyl Wrapped Preview](./public/preview.png)  
-*(You can update this with your own screenshot)*
+![Vinyl Wrapped Preview](./client/public/preview-home.jpg)  
+![Vinyl Wrapped Preview](./client/public/preview-img.PNG)  
+![Vinyl Wrapped Preview](./client/public/preview-contact.jpg)  
+![Vinyl Wrapped Preview](./client/public/preview-policy.jpg)  
 
 
 

@@ -1,25 +1,24 @@
-# 🎶 Vinyl Wrapped — Your Spotify Wrapped Style App
+# Vinyl Wrapped — Spotify Top Tracks
 
-A web application that displays your **top Spotify tracks** in a vinyl-inspired design.  
-Built with **Next.js (frontend)** and **Express.js (backend)**, integrated with **Spotify Web API**.  
-This project replicates the concept of *Spotify Wrapped*, allowing users to view and export their favorite tracks.
+A web application that displays your **top Spotify tracks** in a vinyl-inspired design.  Built with **Next.js (frontend)** and **Express.js (backend)**, integrated with **Spotify Web API**. This project replicates the concept of *Spotify Wrapped*, allowing users to view and export their favorite tracks.
+
+
 
 > ⚠️ This app is not affiliated with Spotify AB.
 
----
 
-## 🚀 Features
+
+## Features
 
 - Spotify OAuth2 Login
 - Fetch user’s top tracks via Spotify API
 - Vinyl-style UI with card design
 - Export design as image using `html2canvas`
 - Refresh token handling
-- Backend separated via Express and deployed on Railway
 
----
 
-## 🛠️ Tech Stack
+
+## Tech Stack
 
 | Layer      | Technology                |
 |------------|----------------------------|
@@ -28,21 +27,74 @@ This project replicates the concept of *Spotify Wrapped*, allowing users to view
 | Backend    | [Express.js](https://expressjs.com/) |
 | API Auth   | [Spotify Web API](https://developer.spotify.com/documentation/web-api) |
 | Image      | [html2canvas](https://www.npmjs.com/package/html2canvas) |
-| Hosting    | Frontend: Vercel<br>Backend: Railway |
 
----
+
 
 ## Preview
 
 ![Vinyl Wrapped Preview](./public/preview.png)  
 *(You can update this with your own screenshot)*
 
----
 
-## 📦 Getting Started
+
+## Getting Started
 
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/fahsaifst/vinyl-wrapped.git
+git clone https://github.com/YOUR_USERNAME/vinyl-wrapped.git
 cd vinyl-wrapped
+```
+
+
+### 2. Install dependencies
+
+Frontend
+
+```bash
+cd client
+npm install
+```
+
+Backend
+
+```bash
+cd server
+npm install
+```
+
+### 3. Setup Environment Variables
+
+Create a .env file in the server/ directory:
+
+```bash
+SPOTIFY_CLIENT_ID=your_spotify_client_id
+SPOTIFY_CLIENT_SECRET=your_spotify_client_secret
+REDIRECT_URI=http://localhost:3001/callback
+```
+
+> Ensure that REDIRECT_URI matches the one registered on Spotify Developer Dashboard.
+
+### 4. Run Locally
+
+Frontend
+
+```bash
+cd client
+npm install
+npm run dev
+```
+
+Backend
+
+```bash
+cd server
+npm install
+node index.js
+```
+
+## License
+
+This project is for learning/demo purposes only.
+No copyright infringement intended.
+

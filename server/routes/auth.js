@@ -8,7 +8,7 @@ const CLIENT_ID = process.env.SPOTIFY_CLIENT_ID;
 const CLIENT_SECRET = process.env.SPOTIFY_CLIENT_SECRET;
 const REDIRECT_URI = process.env.REDIRECT_URI;
 
-// 1. Redirect to Spotify login
+// redirect to spotify login
 router.get('/login', (req, res) => {
   const scope = 'user-top-read';
   const authURL = 'https://accounts.spotify.com/authorize?' +
@@ -21,7 +21,7 @@ router.get('/login', (req, res) => {
   res.redirect(authURL);
 });
 
-// 2. Callback: Receive Spotify Code → get token → redirect to frontend
+// get callback from spotify
 router.get('/callback', async (req, res) => {
   const code = req.query.code;
 
@@ -51,9 +51,7 @@ router.get('/callback', async (req, res) => {
   }
 });
 
-// 3. API: Get top tracks
-// routes/auth.js
-
+// get top tracks
 router.get('/top-tracks', async (req, res) => {
   const authHeader = req.headers.authorization;
   const token = authHeader && authHeader.split(' ')[1];

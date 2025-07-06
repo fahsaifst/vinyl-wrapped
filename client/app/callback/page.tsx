@@ -21,5 +21,5 @@ export default function CallbackPage() {
     }
   }, [router]);
 
-  return <p>Logging in with Spotify...</p>;
+  return <p className='flex justify-center items-center'>Logging in with Spotify...</p>;
 }

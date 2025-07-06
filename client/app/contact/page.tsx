@@ -25,20 +25,3 @@ export default function ContactPage() {
 }
 
 
-
-
-// export const ContactVinyl = () => {
-//   return (
-//     <div className="fixed inset-0 z-50 flex items-center justify-center pointer-events-none">
-//       {/* Optional blur layer behind vinyl */}
-//       <div className="absolute w-[250px] h-[250px] sm:w-[300px] sm:h-[300px] rounded-full overflow-hidden backdrop-blur-[2px] bg-white/10" />
-
-//       {/* Vinyl image itself */}
-//       <img
-//         src="/Vinyl_BG.png"
-//         alt="Vinyl Background"
-//         className="w-[250px] h-[250px] sm:w-[300px] sm:h-[300px] object-cover z-10"
-//       />
-//     </div>
-//   );
-// };

@@ -99,6 +99,6 @@ node index.js
 
 ## License
 
-This project is for learning/demo purposes only.
+This project is for learning and demo purposes only.
 No copyright infringement intended.
 
